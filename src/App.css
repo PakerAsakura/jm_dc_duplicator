@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
+@import 'tailwindcss';
+
+.pacifico-regular {
+  font-family: 'Pacifico', cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.bungee-regular {
+  font-family: 'Bungee', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* RGB Border Animation */
+@keyframes rgb-border {
+  0% {
+    border-color: #ff0000;
+  }
+  25% {
+    border-color: #00ff00;
+  }
+  50% {
+    border-color: #0000ff;
+  }
+  75% {
+    border-color: #ffff00;
+  }
+  100% {
+    border-color: #ff0000;
+  }
+}
+
+.rgb-border {
+  animation: rgb-border 3s linear infinite;
+}
+
+/* Individual Letter Bounce + Color */
+@keyframes letter-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+    color: #ff0000;
+  }
+  10% {
+    transform: translateY(-20px);
+    color: #ff5500;
+  }
+  20% {
+    transform: translateY(0);
+    color: #ffff00;
+  }
+  30% {
+    transform: translateY(-10px);
+    color: #00ff00;
+  }
+  40% {
+    transform: translateY(0);
+    color: #00aaff;
+  }
+  50% {
+    transform: translateY(-5px);
+    color: #0000ff;
+  }
+  60% {
+    transform: translateY(0);
+    color: #9900ff;
+  }
+  70% {
+    transform: translateY(-3px);
+    color: #ff00ff;
+  }
+}
+
+.bouncing-letters {
+  display: inline-flex;
+}
+
+.bouncing-letter {
+  display: inline-block;
+  animation: letter-bounce 3s infinite;
+}
