@@ -34,9 +34,7 @@ app.use(express.json())
 // Store active processes
 const activeProcesses = new Map()
 
-// ==================== ADD THESE ENDPOINTS ====================
-
-// 1. Root endpoint - test if server is online
+// Root endpoint
 app.get('/', (req, res) => {
   res.json({
     status: 'online',
@@ -46,7 +44,7 @@ app.get('/', (req, res) => {
   })
 })
 
-// 2. Health check endpoint
+// Health check endpoint
 app.get('/api/health', (req, res) => {
   res.json({
     success: true,
@@ -58,7 +56,7 @@ app.get('/api/health', (req, res) => {
   })
 })
 
-// 3. Simple ping endpoint
+//  Simple ping endpoint
 app.get('/api/ping', (req, res) => {
   res.json({
     success: true,
@@ -66,8 +64,6 @@ app.get('/api/ping', (req, res) => {
     timestamp: Date.now(),
   })
 })
-
-// ==================== END OF ADDED ENDPOINTS ====================
 
 // Socket.IO connection
 io.on('connection', (socket) => {
@@ -148,12 +144,10 @@ app.post('/api/cancel/:processId', (req, res) => {
 
 const PORT = process.env.PORT || 3001
 server.listen(PORT, () => {
-  console.log(`🚀 Backend server running on port ${PORT}`)
-  console.log(`🔗 WebSocket server ready for connections`)
+  console.log(`Backend server running on port ${PORT}`)
+  console.log(` WebSocket server ready for connections`)
   console.log(
-    `🌐 CORS enabled for: ${process.env.CLIENT_URL || 'http://localhost:5173'}`,
+    ` CORS enabled for: ${process.env.CLIENT_URL || 'http://localhost:5173'}`,
   )
-  console.log(
-    `✅ Health check available at: http://localhost:${PORT}/api/health`,
-  )
+  console.log(`Health check available at: http://localhost:${PORT}/api/health`)
 })
