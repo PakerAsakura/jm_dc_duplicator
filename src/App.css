@@ -37,7 +37,6 @@
   animation: rgb-border 3s linear infinite;
 }
 
-/* Individual Letter Bounce + Color */
 @keyframes letter-bounce {
   0%,
   100% {
